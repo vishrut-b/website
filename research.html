@@ -3,8 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research - Academic Portfolio</title>
+  <title>Research – Academic Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Research Interests pills */
+    .research-interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .interest-btn {
+      padding: 0.3rem 0.8rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      border: 1px solid var(--accent);
+      background: var(--button-bg);
+      color: var(--link);
+      cursor: default;
+      transition: background 0.3s;
+    }
+    .interest-btn:hover {
+      background: var(--button-hover);
+    }
+
+    /* Images under each research item */
+    .research-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .research-images img {
+      max-width: 200px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+
+    /* Read-more toggle */
+    .more-content {
+      display: none;
+      margin-top: 1rem;
+    }
+    .more-content.show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -17,32 +62,87 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+
   <section>
     <h2>Research</h2>
-    <div>
-      <h3>Master's thesis at Observatoire Astronomique de Strasbourg (2024)</h3>
-      <p><strong>Focus:</strong> Research on the impact of inhomogeneous reionization on cosmic filaments and haloes using Cosmic Dawn III simulation.</p>
-      <p><strong>Objectives & Methodologies:</strong> ...</p>
-      <p><strong>Conclusions:</strong> ...</p>
+
+    <!-- Research Interests -->
+    <div class="research-interests">
+      <span class="interest-btn">Epoch of Reionization</span>
+      <span class="interest-btn">Cosmology</span>
+      <span class="interest-btn">Galaxy Formation &amp; Evolution</span>
+      <span class="interest-btn">ML in Astrophysics</span>
     </div>
-    <!-- Add more internship blocks as needed -->
-    <div>
-      <h3>Internship at Laboratoire Physique et mécanique des milieux Hétérogènes (PMMH) (2023)</h3>
-      <p><strong>Focus:</strong> Research on Computational Fluid Dynamics.</p>
-      <p><strong>Objectives & Methodologies:</strong> To write a program in Fortran 90 to conduct linear stability analysis in a rectangular domain of the 
-      Boussinesq equations governing Rayleigh-Bénard convection</p>
-      <p><strong>Conclusions:</strong> ...</p>
+
+    <!-- Thesis -->
+    <div class="research-item">
+      <h3>Master's Thesis – Observatoire Astronomique de Strasbourg (2024)</h3>
+      <p><strong>Focus:</strong> Impact of inhomogeneous reionization on cosmic filaments and haloes using the Cosmic Dawn III simulation.</p>
+      <p><strong>Objectives & Methodologies:</strong> …</p>
+      <p><strong>Conclusions:</strong> …</p>
+
+      <div class="research-images">
+        <img src="research-images/cosmic-dawn1.jpg" alt="Cosmic Dawn snapshot 1">
+        <img src="research-images/cosmic-dawn2.jpg" alt="Cosmic Dawn snapshot 2">
+      </div>
+
+      <div class="more-content">
+        <p>Here you can elaborate further on your data analysis techniques, simulation parameters, and key takeaways from the study. Add as much detail as you like.</p>
+      </div>
+      <button class="btn read-more-btn">Read More</button>
+      <a href="reports/thesis.pdf" target="_blank" class="btn">Report</a>
     </div>
-    <!-- Add more internship blocks as needed -->
-    <div>
-      <h3>Internship at the Indian Institute of Astrophysics, Bangalore (India, 2021)</h3>
-      <p><strong>Focus:</strong> Research on the Infra red properties of planetary nebulae around PG-1159 central stars.</p>
-      <p><strong>Objectives & Methodologies:</strong> ...</p>
-      <p><strong>Conclusions:</strong> ...</p>
+
+    <!-- PMMH Internship -->
+    <div class="research-item">
+      <h3>CFD Internship – PMMH-ESPCI, Paris (2023)</h3>
+      <p><strong>Focus:</strong> Linear stability analysis of Rayleigh–Bénard convection in a rectangular domain using Fortran 90.</p>
+      <p><strong>Objectives & Methodologies:</strong> …</p>
+      <p><strong>Conclusions:</strong> …</p>
+
+      <div class="research-images">
+        <img src="research-images/cfd1.jpg" alt="CFD plot 1">
+        <img src="research-images/cfd2.jpg" alt="CFD plot 2">
+      </div>
+
+      <div class="more-content">
+        <p>Additional details on code optimization, boundary condition setups, and validation against theoretical growth rates can go here.</p>
+      </div>
+      <button class="btn read-more-btn">Read More</button>
+      <a href="reports/pmmh_internship.pdf" target="_blank" class="btn">Report</a>
     </div>
-    <!-- Add more internship blocks as needed -->
+
+    <!-- PG-1159 Internship -->
+    <div class="research-item">
+      <h3>IR Properties Internship – Indian Institute of Astrophysics (2021)</h3>
+      <p><strong>Focus:</strong> Infrared properties of planetary nebulae around PG-1159 central stars.</p>
+      <p><strong>Objectives & Methodologies:</strong> …</p>
+      <p><strong>Conclusions:</strong> …</p>
+
+      <div class="research-images">
+        <img src="research-images/pg1159_1.jpg" alt="PG-1159 nebula 1">
+        <img src="research-images/pg1159_2.jpg" alt="PG-1159 nebula 2">
+      </div>
+
+      <div class="more-content">
+        <p>Describe your photometric analysis, spectral fitting routines, and any catalog cross-matching you performed.</p>
+      </div>
+      <button class="btn read-more-btn">Read More</button>
+      <a href="reports/pg1159_internship.pdf" target="_blank" class="btn">Report</a>
+    </div>
+
   </section>
-  <footer>&copy; 2025 Vishrut Bezbarua. All rights reserved.</footer>
+
+  <footer>&copy; 2025 [Your Name]. All rights reserved.</footer>
+
+  <script>
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const more = btn.previousElementSibling;
+        more.classList.toggle('show');
+        btn.textContent = more.classList.contains('show') ? 'Read Less' : 'Read More';
+      });
+    });
+  </script>
 </body>
 </html>
-
