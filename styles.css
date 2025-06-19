@@ -1,3 +1,6 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600&display=swap');
+
 :root {
   --bg: #fffaf4;
   --text: #4a4a4a;
@@ -12,10 +15,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}  
+}
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont;
+  font-family: 'Montserrat', sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
