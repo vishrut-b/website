@@ -15,7 +15,7 @@
 }  
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Times New Roman";
+  font-family: -apple-system, BlinkMacSystemFont, Times;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
