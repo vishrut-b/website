@@ -23,6 +23,10 @@ body {
   color: var(--text);
   line-height: 1.6;
 }
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
 nav {
   background: rgba(255,255,255,0.8);
@@ -159,6 +163,7 @@ tbody tr:nth-child(even) {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .media-container {
@@ -222,4 +227,15 @@ footer {
   padding: 2rem 1rem;
   color: var(--text);
   font-size: 0.9rem;
+}
+
+/* script.js */
+const readMoreBtn = document.getElementById('readMoreBtn');
+if (readMoreBtn) {
+  const moreContent = document.getElementById('intro-more');
+  readMoreBtn.addEventListener('click', () => {
+    const visible = moreContent.style.display === 'block';
+    moreContent.style.display = visible ? 'none' : 'block';
+    readMoreBtn.textContent = visible ? 'Read More' : 'Read Less';
+  });
 }
