@@ -23,10 +23,6 @@ body {
   color: var(--text);
   line-height: 1.6;
 }
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
 
 nav {
   background: rgba(255,255,255,0.8);
@@ -109,78 +105,52 @@ p {
   transform: translateY(-2px);
 }
 
+/* Research Interests pills */
+.research-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.interest-btn {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  border: 1px solid var(--accent);
+  background: var(--button-bg);
+  color: var(--link);
+  cursor: default;
+  transition: background 0.3s;
+}
+.interest-btn:hover {
+  background: var(--button-hover);
+}
+
+/* Images under each research item */
+.research-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.research-images img {
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Read-more toggle */
 .more-content {
   display: none;
   margin-top: 1rem;
-  padding: 1rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow);
 }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1.5rem;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px var(--shadow);
-}
-
-th, td {
-  padding: 1rem 1.25rem;
-  text-align: left;
-}
-
-th {
-  background: var(--button-bg);
-  font-weight: 600;
-}
-
-tbody tr:nth-child(even) {
-  background: #fdfbf8;
-}
-
-.art-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 1.5rem;
-}
-
-.art-card {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 16px var(--shadow);
-  transition: transform 0.3s;
-}
-
-.art-card:hover {
-  transform: translateY(-4px);
-}
-
-.art-card img {
-  width: 100%;
-  height: auto;
+.more-content.show {
   display: block;
-  object-fit: contain;
 }
 
-.media-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-
-.media-container video,
-.media-container audio {
-  border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow);
-  width: 100%;
-  max-width: 720px;
-}
-
+/* Contact & Social */
 form {
   display: flex;
   flex-direction: column;
@@ -217,7 +187,6 @@ input[type="submit"] {
   color: var(--accent);
   transition: color 0.3s;
 }
-
 .social-btn:hover {
   color: var(--link);
 }
@@ -228,3 +197,22 @@ footer {
   color: var(--text);
   font-size: 0.9rem;
 }
+
+/* script.js */
+console.log('Document loaded: initializing scripts');
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOMContentLoaded event fired');
+  const readMoreButtons = document.querySelectorAll('.read-more-btn');
+  console.log(`Found ${readMoreButtons.length} read-more buttons`);
+  readMoreButtons.forEach(btn => {
+    console.log('Attaching click listener to', btn);
+    btn.addEventListener('click', () => {
+      const more = btn.previousElementSibling;
+      console.log('Toggling more-content for', more);
+      more.classList.toggle('show');
+      const isShowing = more.classList.contains('show');
+      btn.textContent = isShowing ? 'Read Less' : 'Read More';
+      console.log(`Button text changed to: ${btn.textContent}`);
+    });
+  });
+});
