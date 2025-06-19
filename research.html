@@ -1,3 +1,4 @@
+<!-- research.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,52 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research – Academic Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Research Interests pills */
-    .research-interests {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-    .interest-btn {
-      padding: 0.3rem 0.8rem;
-      font-size: 0.9rem;
-      border-radius: 20px;
-      border: 1px solid var(--accent);
-      background: var(--button-bg);
-      color: var(--link);
-      cursor: default;
-      transition: background 0.3s;
-    }
-    .interest-btn:hover {
-      background: var(--button-hover);
-    }
-
-    /* Images under each research item */
-    .research-images {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 1rem 0;
-    }
-    .research-images img {
-      max-width: 350px;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px var(--shadow);
-    }
-
-    /* Read-more toggle */
-    .more-content {
-      display: none;
-      margin-top: 1rem;
-    }
-    .more-content.show {
-      display: block;
-    }
-  </style>
 </head>
 <body>
   <nav>
@@ -136,14 +91,6 @@
 
   <footer>&copy; 2025 [Your Name]. All rights reserved.</footer>
 
-  <script>
-    document.querySelectorAll('.read-more-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const more = btn.previousElementSibling;
-        more.classList.toggle('show');
-        btn.textContent = more.classList.contains('show') ? 'Read Less' : 'Read More';
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
